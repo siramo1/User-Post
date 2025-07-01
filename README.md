@@ -1,5 +1,3 @@
-/******\******* ✨ Windsurf Command ⭐ ******\*******/
-
 # User Post App
 
 This is a simple User Post app built with React.js, Node.js, Express, and MongoDB. It allows users to create, read, update, and delete blog posts. It also includes user authentication and authorization.
