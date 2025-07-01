@@ -9,7 +9,7 @@ import postRouter from "./routes/blog.route.js";
 dotenv.config();
 const app = express();
 app.use(cors({
-    origin: "http://localhost:5175",
+    origin: "http://localhost:5175, https://user-post-vd57.onrender.com/",
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH']
 }));
