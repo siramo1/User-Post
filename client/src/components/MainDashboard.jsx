@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 function MainDashboard() {
+    const serverApi = import.meta.env.VITE_SERVER_URL;
     const [blogs, setBlogs] = useState([]);
     document.title = "User Post";
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/blogs/all-posts`)
+        axios.get(`${serverApi}/blogs/all-posts`)
             .then(response => {
                 if (response.data && Array.isArray(response.data.posts)) {
                     setBlogs(response.data.posts);
@@ -18,7 +19,7 @@ function MainDashboard() {
             .catch(error => {
                 console.error("Error fetching posts:", error);
             });
-    }, []);
+    }, [serverApi]);
 
     return (
         <div className="pt-20"> {/* Padding to account for fixed navbar */}
