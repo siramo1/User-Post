@@ -4,6 +4,7 @@ import TopNavbar from "../components/TopNavbar";
 import { useNavigate } from "react-router-dom";
 
 function AddPost() {
+    const serverApi = import.meta.env.VITE_SERVER_URL;
     const [title, setTitle] = useState('');
     const [discription, setDiscription] = useState('');
     const [image, setImage] = useState('');
@@ -13,7 +14,7 @@ function AddPost() {
     const handleAddPost = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/api/blogs/add-post', {
+            const response = await axios.post(`${serverApi}/blogs/add-post`, {
                 title,
                 discription,
                 image

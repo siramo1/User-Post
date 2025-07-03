@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 function UserProfileBody() {
+    const serverApi = import.meta.env.VITE_SERVER_URL;
     const { user } = useAuthStore(); 
     const [blogs, setBlogs] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -12,7 +13,7 @@ function UserProfileBody() {
         const fetchPosts = async () => {
             try {
                 setLoading(true);
-                const response = await axios.get(`http://localhost:5000/api/blogs/user-posts/`);
+                const response = await axios.get(`${serverApi}/blogs/user-posts/`);
                 
                 if (response.data && Array.isArray(response.data.posts)) {
                     setBlogs(response.data.posts);
@@ -29,10 +30,10 @@ function UserProfileBody() {
         };
 
         fetchPosts();
-    }, []);
+    }, [serverApi]);
     const handleDeletePost = async (postId) => {
         try {
-            const response = await axios.delete(`http://localhost:5000/api/blogs/delete-post/${postId}`);
+            const response = await axios.delete(`${serverApi}/blogs/delete-post/${postId}`);
             if (response.data.success) {
                 setBlogs(blogs.filter(blog => blog._id !== postId));
                 alert('Post deleted successfully');
