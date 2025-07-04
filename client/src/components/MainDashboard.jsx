@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 function MainDashboard() {
-    const serverApi = 'https://user-post-server.onrender.com/api/';
+    const serverApi = 'https://user-post-server.onrender.com/api';
     const [blogs, setBlogs] = useState([]);
     document.title = "User Post";
 

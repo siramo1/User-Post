@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 function UserProfileBody() {
-    const serverApi = 'https://user-post-server.onrender.com/api/';
+    const serverApi = 'https://user-post-server.onrender.com/api';
     const { user } = useAuthStore(); 
     const [blogs, setBlogs] = useState([]);
     const [loading, setLoading] = useState(true);

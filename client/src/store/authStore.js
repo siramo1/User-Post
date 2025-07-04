@@ -1,7 +1,7 @@
 import {create} from 'zustand';
 import axios from 'axios';
 
-const serverApi = 'https://user-post-server.onrender.com/api/';
+const serverApi = 'https://user-post-server.onrender.com/api';
 axios.defaults.withCredentials = true;
 axios.interceptors.response.use(
   response => response,

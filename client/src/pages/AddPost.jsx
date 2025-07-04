@@ -4,7 +4,7 @@ import TopNavbar from "../components/TopNavbar";
 import { useNavigate } from "react-router-dom";
 
 function AddPost() {
-    const serverApi = 'https://user-post-server.onrender.com/api/';
+    const serverApi = 'https://user-post-server.onrender.com/api';
     const [title, setTitle] = useState('');
     const [discription, setDiscription] = useState('');
     const [image, setImage] = useState('');
